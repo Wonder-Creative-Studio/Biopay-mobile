@@ -1,3 +1,4 @@
+import 'package:biopay_mobile/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomInputField extends StatefulWidget {
@@ -47,13 +48,14 @@ class _CustomInputFieldState extends State<CustomInputField> {
       // <-- NEW
       keyboardType: widget.keyBoardType,
       decoration: InputDecoration(
+        fillColor: Colors.transparent,
         hintText: widget.hintText,
         hintStyle: const TextStyle(fontSize: 15),
         filled: true,
         prefixIcon: widget.prefix,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0),
-          borderSide: BorderSide.none,
+          borderSide: const BorderSide(color: greyColor),
         ),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 16,

@@ -43,7 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         index = 2;
       });
     } else if (index == 2) {
-      context.go(Routes.landingScreen);
+      context.go(Routes.loginScreen);
     }
   }
 

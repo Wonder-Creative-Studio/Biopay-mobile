@@ -1,8 +1,8 @@
 class Routes {
   static const splashScreen = "/";
   static const onboardingScreen = "/onboarding";
-  static const homeScreen = "/home";
   static const loginScreen = "/login";
+  static const homeScreen = "/home";
   static const aiBeeScreen = "/ai-bee";
   static const searchScreen = "/search";
   static const rewardScreen = "/reward";
