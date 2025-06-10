@@ -15,6 +15,7 @@ class CustomFilledButton extends StatelessWidget {
   final Color? subtitleTextColor;
   final TextStyle? titleStyle;
   final Gradient? gradient;
+  final Icon? icon;
 
   const CustomFilledButton({
     super.key,
@@ -25,21 +26,22 @@ class CustomFilledButton extends StatelessWidget {
     this.backgroundColor,
     this.bottomMargin = 0,
     this.bottomSafeArea = true,
-    this.isExpanded = false,
-    this.borderRadius = 3,
+    this.isExpanded = true,
+    this.borderRadius = 15,
     this.width,
     this.height,
     this.subtitleTextColor,
     this.titleStyle,
-    this.gradient, // Add gradient parameter for gradient background
+    this.gradient,
+    this.icon,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: bottomMargin),
-      width: width ?? double.infinity,
-      height: height,
+      width: width ?? (isExpanded ? double.infinity : null),
+      height: height ?? 50,
       child: Center(
         child: Container(
           decoration: BoxDecoration(
@@ -50,26 +52,42 @@ class CustomFilledButton extends StatelessWidget {
             onPressed: onPressed,
             style: FilledButton.styleFrom(
               alignment: Alignment.center,
-              backgroundColor: onPressed == null ? Colors.grey.shade300 : backgroundColor,
+              backgroundColor:
+                  onPressed == null ? Colors.grey.shade300 : backgroundColor,
               foregroundColor: onPressed == null ? Colors.black : titleColor,
-              minimumSize: Size(width ?? double.infinity, height ?? 40),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
+              ),
+              minimumSize: Size(
+                width ?? (isExpanded ? double.infinity : 150),
+                height ?? 50,
               ),
             ),
             child: FittedBox(
               child: Center(
-                child: Text.rich(
-                  TextSpan(
-                    text: subtitle ?? "",
-                    style: TextStyle(fontSize: 15, color: subtitleTextColor),
-                    children: [
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text.rich(
                       TextSpan(
-                        text: title,
-                        style: titleStyle ?? TextStyle(fontSize: 15, color: Colors.white),
+                        text: subtitle ?? "",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: subtitleTextColor,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: title,
+                            style:
+                                titleStyle ??
+                                TextStyle(fontSize: 15, color: Colors.white),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    if (icon != null) const SizedBox(width: 8),
+                    if (icon != null) icon!,
+                  ],
                 ),
               ),
             ),

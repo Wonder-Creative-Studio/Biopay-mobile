@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-
 import 'constants/theme.dart';
 import 'router/router.dart';
 import 'utils/size_utils.dart';

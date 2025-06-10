@@ -1,5 +1,9 @@
+import 'package:biopay_mobile/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import '../../../constants/assets.dart';
+import '../../../router/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,6 +16,10 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
+    Future.delayed(const Duration(seconds: 3), () {
+      context.go(Routes.onboardingScreen);
+    });
   }
 
   @override
@@ -23,14 +31,20 @@ class SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            const SizedBox(height: 20),
-            // Image.asset(Assets.logoHr, height: 100),
-            const Text('Biopay', style: TextStyle(fontSize: 24)),
-            const SizedBox(height: 20),
-            SpinKitCircle(color: Theme.of(context).primaryColor),
+            Positioned(
+              top: SizeUtils.screenHeight * 0.4,
+              left: 0,
+              right: 0,
+              child: Center(child: Image.asset(Assets.textLogo, height: 100)),
+            ),
+            Positioned(
+              top: SizeUtils.screenHeight * 0.8,
+              left: 0,
+              right: 0,
+              child: SpinKitCircle(color: Theme.of(context).primaryColor),
+            ),
           ],
         ),
       ),
