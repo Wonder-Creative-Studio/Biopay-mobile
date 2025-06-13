@@ -6,6 +6,9 @@ class Routes {
   static const signUpScreen = "/sign-up";
   static const merchantSignupScreen = "/merchant-signup";
   static const aadharKycScreen = "/aadhar-kyc";
+  static const linkBankAccountScreen = "/link-bank-account";
+  static const uploadDocumentsScreen = "/upload-documents";
+  static const onboardingSuccess = "/onboarding-success";
   static const homeScreen = "/home";
   static const aiBeeScreen = "/ai-bee";
   static const searchScreen = "/search";

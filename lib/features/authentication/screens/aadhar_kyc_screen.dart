@@ -37,7 +37,7 @@ class AadharKycScreen extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    context.push(Routes.signUpScreen);
+                    context.push(Routes.linkBankAccountScreen);
                   },
                   child: Text("Skip", style: TextStyle(color: Colors.grey)),
                 ),
@@ -72,6 +72,7 @@ class AadharKycScreen extends StatelessWidget {
                                 "We’ve sent a 6-digit OTP to your Aadhaar-linked mobile.",
                             onVerify: () {
                               log("[AadharKycScreen] Verify OTP]");
+                              context.push(Routes.linkBankAccountScreen);
                             },
                             onResend: () {
                               log("[AadharKycScreen] Resend OTP]");

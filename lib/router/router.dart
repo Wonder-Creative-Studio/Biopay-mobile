@@ -1,10 +1,13 @@
 import 'package:go_router/go_router.dart';
 import '../features/authentication/models/otp_screen_arguments.dart';
 import '../features/authentication/screens/aadhar_kyc_screen.dart';
+import '../features/authentication/screens/link_bank_account_screen.dart';
 import '../features/authentication/screens/login_screen.dart';
 import '../features/authentication/screens/merchant_signup_screen.dart';
+import '../features/authentication/screens/onboarding_success.dart';
 import '../features/authentication/screens/otp_screen.dart';
 import '../features/authentication/screens/signup_screen.dart';
+import '../features/authentication/screens/upload_documents_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import 'routes.dart';
@@ -44,6 +47,18 @@ final router = GoRouter(
     GoRoute(
       path: Routes.aadharKycScreen,
       builder: (context, state) => AadharKycScreen(),
+    ),
+    GoRoute(
+      path: Routes.linkBankAccountScreen,
+      builder: (context, state) => LinkBankAccountScreen(),
+    ),
+    GoRoute(
+      path: Routes.uploadDocumentsScreen,
+      builder: (context, state) => UploadDocumentsScreen(),
+    ),
+    GoRoute(
+      path: Routes.onboardingSuccess,
+      builder: (context, state) => OnboardingSuccess(),
     ),
   ],
 );

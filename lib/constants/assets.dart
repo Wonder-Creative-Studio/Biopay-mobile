@@ -5,4 +5,5 @@ class Assets {
   static final String onboarding1 = '${basePath}onboarding1.png';
   static final String onboarding2 = '${basePath}onboarding2.png';
   static final String onboarding3 = '${basePath}onboarding3.png';
+  static final String onboardingSuccess = '${basePath}onboarding_success.png';
 }

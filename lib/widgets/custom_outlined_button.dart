@@ -14,6 +14,8 @@ class CustomOutlinedButton extends StatelessWidget {
   final double? height;
   final Color? subtitleTextColor;
   final TextStyle? titleStyle;
+  final Icon? icon;
+
   const CustomOutlinedButton({
     super.key,
     required this.onPressed,
@@ -24,50 +26,57 @@ class CustomOutlinedButton extends StatelessWidget {
     this.bottomMargin = 0,
     this.bottomSafeArea = true,
     this.isExpanded = false,
-    this.borderRadius = 3,
+    this.borderRadius = 15,
     this.width,
     this.height,
     this.subtitleTextColor,
     this.titleStyle,
+    this.icon,
   });
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      bottom: bottomSafeArea,
-      child: Container(
-        margin: EdgeInsets.only(bottom: bottomMargin),
-        width: width ?? double.infinity,
-        height: height,
-        child: Center(
-          child: OutlinedButton(
-            onPressed: onPressed,
-            style: OutlinedButton.styleFrom(
-              alignment: Alignment.center,
-              backgroundColor:
-                  onPressed == null ? Colors.grey.shade300 : backgroundColor,
-              foregroundColor: onPressed == null ? Colors.black : titleColor,
-              minimumSize: Size(width ?? double.infinity, height ?? 40),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(borderRadius),
-              ),
+    return Container(
+      margin: EdgeInsets.only(bottom: bottomMargin),
+      width: width ?? (isExpanded ? double.infinity : null),
+      height: height ?? 50,
+      child: Center(
+        child: OutlinedButton(
+          onPressed: onPressed,
+          style: OutlinedButton.styleFrom(
+            alignment: Alignment.center,
+            backgroundColor:
+                onPressed == null ? Colors.grey.shade300 : backgroundColor,
+            foregroundColor: onPressed == null ? Colors.black : titleColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
             ),
-            child: FittedBox(
-              child: Center(
-                child: Text.rich(
-                  TextSpan(
-                    text: subtitle ?? "",
-                    style: TextStyle(fontSize: 15, color: subtitleTextColor),
-                    children: [
-                      TextSpan(
-                        text: title,
-                        style:
-                            titleStyle ??
-                            TextStyle(fontSize: 15, color: Colors.white),
-                      ),
-                    ],
+            minimumSize: Size(
+              width ?? (isExpanded ? double.infinity : 150),
+              height ?? 50,
+            ),
+          ),
+          child: FittedBox(
+            child: Center(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text.rich(
+                    TextSpan(
+                      text: subtitle ?? "",
+                      style: TextStyle(fontSize: 15, color: subtitleTextColor),
+                      children: [
+                        TextSpan(
+                          text: title,
+                          style:
+                              titleStyle ??
+                              TextStyle(fontSize: 15, color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                  if (icon != null) const SizedBox(width: 8),
+                  if (icon != null) icon!,
+                ],
               ),
             ),
           ),
