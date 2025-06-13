@@ -18,20 +18,18 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40), // Add some space at the top
+            const SizedBox(height: 40),
             Text(
               "Welcome Back",
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
+                fontSize: 30,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               "Please sign in to continue.",
-              style: Theme.of(
-                context,
-              ).textTheme.titleMedium?.copyWith(color: Colors.white70),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             Expanded(
               child: Center(
@@ -48,7 +46,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(Routes.otpScreen);
+                      },
                       title: "Sign In Securely",
                       icon: Icon(Icons.arrow_forward_rounded),
                     ),
