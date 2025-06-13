@@ -94,9 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
-                      onPressed: () {
-                        // TODO: Implement signup logic
-                      },
+                      onPressed: () {},
                       title: "Create Account",
                     ),
                     const SizedBox(height: 16),
@@ -111,11 +109,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     const SizedBox(height: 16),
                     Center(
-                      child: Text(
-                        "Got a business? Join as a Merchant",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                      child: TextButton(
+                        onPressed:
+                            () => context.push(Routes.merchantSignupScreen),
+                        child: Text(
+                          "Got a business? Join as a Merchant",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
@@ -129,7 +131,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Text("Already have an account? Sign in"),
               ),
             ),
-            const SizedBox(height: 24), // Add some space at the bottom
+            const SizedBox(height: 24),
           ],
         ),
       ),

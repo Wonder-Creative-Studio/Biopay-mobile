@@ -45,7 +45,6 @@ class _CustomInputFieldState extends State<CustomInputField> {
       obscureText: widget.obscureText ? _hidePassword : false,
       validator: widget.validator,
       onTap: widget.readOnly == true ? widget.onTap : null,
-      // <-- NEW
       keyboardType: widget.keyBoardType,
       decoration: InputDecoration(
         fillColor: Colors.transparent,
