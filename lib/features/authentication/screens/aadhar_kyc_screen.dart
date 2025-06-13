@@ -8,9 +8,9 @@ import '../../../widgets/custom_filled_button.dart';
 import '../../../widgets/custom_input_field.dart';
 import '../models/otp_screen_arguments.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
-  final TextEditingController mobileController = TextEditingController();
+class AadharKycScreen extends StatelessWidget {
+  AadharKycScreen({super.key});
+  final TextEditingController aadharNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +22,30 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 40),
-            Text(
-              "Welcome Back",
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.w500,
-                fontSize: 30,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    "Complete KYC with Aadhaar",
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.push(Routes.signUpScreen);
+                  },
+                  child: Text("Skip", style: TextStyle(color: Colors.grey)),
+                ),
+              ],
             ),
             const SizedBox(height: 8),
             Text(
-              "Please sign in to continue.",
+              "Enable AEPS transactions and higher limits",
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Expanded(
@@ -40,12 +54,12 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 120),
-                    Text("Mobile Number", style: TextStyle(fontSize: 14)),
+                    const SizedBox(height: 60),
+                    Text("Aadhaar Number", style: TextStyle(fontSize: 14)),
                     SizedBox(height: 8),
                     CustomInputField(
-                      controller: mobileController,
-                      hintText: "Enter Mobile Number",
+                      controller: aadharNumberController,
+                      hintText: "Enter your 12-digit Aadhaar",
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
@@ -53,32 +67,24 @@ class LoginScreen extends StatelessWidget {
                         context.push(
                           Routes.otpScreen,
                           extra: OtpScreenArguments(
-                            title: "Enter the OTP",
+                            title: "Verify Aadhaar",
                             description:
-                                "We've sent a 6-digit code to +91 98765 43210",
+                                "We’ve sent a 6-digit OTP to your Aadhaar-linked mobile.",
                             onVerify: () {
-                              log("[LoginScreen] Verify OTP]");
+                              log("[AadharKycScreen] Verify OTP]");
                             },
                             onResend: () {
-                              log("[LoginScreen] Resend OTP]");
+                              log("[AadharKycScreen] Resend OTP]");
                             },
                           ),
                         );
                       },
-                      title: "Sign In Securely",
-                      icon: Icon(Icons.arrow_forward_rounded),
+                      title: "Send OTP",
                     ),
                   ],
                 ),
               ),
             ),
-            Center(
-              child: TextButton(
-                onPressed: () => context.push(Routes.signUpScreen),
-                child: Text("Don’t have an account? Sign up"),
-              ),
-            ),
-            const SizedBox(height: 24), // Add some space at the bottom
           ],
         ),
       ),

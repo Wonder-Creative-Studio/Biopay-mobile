@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import '../features/authentication/models/otp_screen_arguments.dart';
+import '../features/authentication/screens/aadhar_kyc_screen.dart';
 import '../features/authentication/screens/login_screen.dart';
 import '../features/authentication/screens/merchant_signup_screen.dart';
 import '../features/authentication/screens/otp_screen.dart';
@@ -24,7 +26,12 @@ final router = GoRouter(
     ),
     GoRoute(
       path: Routes.otpScreen,
-      builder: (context, state) => OtpScreen(),
+      builder: (context, state) {
+        final arguments = state.extra as OtpScreenArguments;
+        return OtpScreen(
+          args: arguments,
+        );
+      },
     ),
     GoRoute(
       path: Routes.signUpScreen,
@@ -33,6 +40,10 @@ final router = GoRouter(
     GoRoute(
       path: Routes.merchantSignupScreen,
       builder: (context, state) => MerchantSignupScreen(),
+    ),
+    GoRoute(
+      path: Routes.aadharKycScreen,
+      builder: (context, state) => AadharKycScreen(),
     ),
   ],
 );

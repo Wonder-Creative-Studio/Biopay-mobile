@@ -1,3 +1,4 @@
+import 'package:biopay_mobile/features/authentication/models/otp_screen_arguments.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
@@ -5,7 +6,9 @@ import '../../../utils/size_utils.dart';
 import '../../../widgets/custom_filled_button.dart';
 
 class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+  final OtpScreenArguments args;
+
+  const OtpScreen({super.key, required this.args});
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -26,7 +29,7 @@ class _OtpScreenState extends State<OtpScreen> {
           children: [
             const SizedBox(height: 40), // Add some space at the top
             Text(
-              "Enter the OTP",
+              widget.args.title,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -34,7 +37,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              "We've sent a 6-digit code to +91 XXXXX 99999",
+              widget.args.description,
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(color: Colors.white70),
@@ -67,7 +70,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
-                      onPressed: () {},
+                      onPressed: widget.args.onVerify,
                       title: "Verify & Continue",
                     ),
                   ],
@@ -77,11 +80,7 @@ class _OtpScreenState extends State<OtpScreen> {
             if (secondsRemaining == 0)
               Center(
                 child: TextButton(
-                  onPressed: () {
-                    setState(() {
-                      secondsRemaining = 30;
-                    });
-                  },
+                  onPressed: widget.args.onResend,
                   child: Text(
                     "Resend OTP",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),

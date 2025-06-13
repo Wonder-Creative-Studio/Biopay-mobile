@@ -94,7 +94,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(Routes.aadharKycScreen);
+                      },
                       title: "Create Account",
                     ),
                     const SizedBox(height: 16),

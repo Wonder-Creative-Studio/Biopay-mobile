@@ -129,6 +129,7 @@ class _MerchantSignupScreenState extends State<MerchantSignupScreen> {
                       const SizedBox(height: 24),
                       CustomFilledButton(
                         onPressed: () {
+                          context.push(Routes.aadharKycScreen);
                         },
                         title: "Sign Up as Merchant",
                       ),

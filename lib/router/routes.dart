@@ -5,6 +5,7 @@ class Routes {
   static const otpScreen = "/otp";
   static const signUpScreen = "/sign-up";
   static const merchantSignupScreen = "/merchant-signup";
+  static const aadharKycScreen = "/aadhar-kyc";
   static const homeScreen = "/home";
   static const aiBeeScreen = "/ai-bee";
   static const searchScreen = "/search";
