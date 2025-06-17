@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        title: 'Kidbee',
+        title: 'Bio Pay',
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
         routerConfig: router,

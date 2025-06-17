@@ -9,12 +9,12 @@ class Routes {
   static const linkBankAccountScreen = "/link-bank-account";
   static const uploadDocumentsScreen = "/upload-documents";
   static const onboardingSuccess = "/onboarding-success";
+  static const landingScreen = "/landing";
   static const homeScreen = "/home";
   static const aiBeeScreen = "/ai-bee";
   static const searchScreen = "/search";
   static const rewardScreen = "/reward";
   static const aiChatScreen = "/ai-chat";
-  static const landingScreen = "/landing";
   static const libraryScreen = "/library";
   static const premiumScreen = "/premium";
   static const trendingScreen = "/trending";

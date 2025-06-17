@@ -10,10 +10,11 @@ import '../features/authentication/screens/signup_screen.dart';
 import '../features/authentication/screens/upload_documents_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
+import '../features/landing/screens/landing_screen.dart';
 import 'routes.dart';
 
 final router = GoRouter(
-  initialLocation: Routes.splashScreen,
+  initialLocation: Routes.landingScreen,
   routes: [
     GoRoute(
       path: Routes.splashScreen,
@@ -59,6 +60,10 @@ final router = GoRouter(
     GoRoute(
       path: Routes.onboardingSuccess,
       builder: (context, state) => OnboardingSuccess(),
+    ),
+    GoRoute(
+      path: Routes.landingScreen,
+      builder: (context, state) => const LandingScreen(),
     ),
   ],
 );

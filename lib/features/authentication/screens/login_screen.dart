@@ -58,6 +58,7 @@ class LoginScreen extends StatelessWidget {
                                 "We've sent a 6-digit code to +91 98765 43210",
                             onVerify: () {
                               log("[LoginScreen] Verify OTP]");
+                              context.push(Routes.landingScreen);
                             },
                             onResend: () {
                               log("[LoginScreen] Resend OTP]");

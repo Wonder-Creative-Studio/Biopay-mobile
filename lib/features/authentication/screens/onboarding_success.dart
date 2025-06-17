@@ -39,7 +39,9 @@ class OnboardingSuccess extends StatelessWidget {
               ),
             ),
             CustomFilledButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go(Routes.landingScreen);
+              },
               title: "Take me to my Wallet",
               isExpanded: true,
             ),
