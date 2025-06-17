@@ -28,17 +28,14 @@ class WalletBalanceCard extends StatelessWidget {
         children: [
           const Text(
             'Wallet Balance',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 16),
           ),
           const SizedBox(height: 8),
           Text(
             '₹${balance.toStringAsFixed(2)}',
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 32,
+              fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -46,18 +43,15 @@ class WalletBalanceCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                '${isPositive ? '+' : ''}${percentChange.toStringAsFixed(1)}% ',
+                '${isPositive ? '+' : ''}${percentChange.toStringAsFixed(1)}% (${isPositive ? '+' : ''}₹${amountChange.toStringAsFixed(0)}) ',
                 style: TextStyle(
                   color: isPositive ? Colors.green : Colors.red,
                   fontSize: 14,
                 ),
               ),
               Text(
-                '(${isPositive ? '+' : ''}₹${amountChange.toStringAsFixed(0)}) last month',
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 14,
-                ),
+                'last month',
+                style: const TextStyle(color: Colors.grey, fontSize: 14),
               ),
             ],
           ),

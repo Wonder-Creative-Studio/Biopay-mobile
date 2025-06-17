@@ -32,41 +32,61 @@ class _LandingScreenState extends State<LandingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: const CommonAppBar(
-        userName: 'Albert Flores',
-      ),
-      body: _screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
-            label: 'Wallet',
+    return SafeArea(
+      child: Scaffold(
+        appBar: CommonAppBar(
+          userName: 'Albert Flores',
+          userAvatar: CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(
+              "https://cdn.noitatnemucod.net/thumbnail/300x400/100/9cbcf87f54194742e7686119089478f8.jpg",
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payment),
-            label: 'UPI',
+        ),
+        body: _screens[_selectedIndex],
+        bottomNavigationBar: SizedBox(
+          height: 60,
+          child: BottomNavigationBar(
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Color(0xFF1A1A1A),
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey.shade600,
+            unselectedIconTheme: IconThemeData(
+              color: Colors.grey.shade600,
+              size: 20,
+            ),
+            selectedIconTheme: IconThemeData(color: Colors.white, size: 20),
+            selectedLabelStyle: TextStyle(color: Colors.white, fontSize: 12),
+            unselectedLabelStyle: TextStyle(
+              color: Colors.grey.shade600,
+              fontSize: 12,
+            ),
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_balance_wallet),
+                label: 'Wallet',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.paypal_rounded),
+                label: 'UPI',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.credit_card),
+                label: 'Cards',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.currency_bitcoin_rounded),
+                label: 'Crypto',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.insights),
+                label: 'Insights',
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card),
-            label: 'Cards',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.currency_bitcoin),
-            label: 'Crypto',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.insights),
-            label: 'Insights',
-          ),
-        ],
+        ),
       ),
     );
   }

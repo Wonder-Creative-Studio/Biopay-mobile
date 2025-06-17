@@ -25,26 +25,29 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 80,
       leading: Padding(
         padding: const EdgeInsets.only(left: 16.0),
-        child: userAvatar ?? const CircleAvatar(
-          backgroundImage: AssetImage('assets/images/default_avatar.png'),
-        ),
+        child:
+            userAvatar ??
+            const CircleAvatar(radius: 30, child: Icon(Icons.person)),
       ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            userGreeting,
-            style: TextStyle(fontSize: 14, color: Colors.grey),
-          ),
+          Text(userGreeting, style: TextStyle(fontSize: 14)),
           Text(
             userName,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ],
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.notifications_outlined),
+          icon: Badge(
+            child: const Icon(
+              Icons.notifications_outlined,
+              color: Colors.white,
+              size: 25,
+            ),
+          ),
           onPressed: onNotificationTap,
         ),
         const SizedBox(width: 8),
