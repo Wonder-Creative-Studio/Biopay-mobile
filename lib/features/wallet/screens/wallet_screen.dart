@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/assets.dart';
+import '../../../widgets/common_app_bar.dart';
 import '../widgets/upi_card.dart';
 import '../widgets/wallet_balance_card.dart';
 import '../widgets/spending_chart_card.dart';
@@ -123,6 +124,15 @@ class _WalletScreenState extends State<WalletScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CommonAppBar(
+        userName: 'Albert Flores',
+        userAvatar: CircleAvatar(
+          radius: 30,
+          backgroundImage: NetworkImage(
+            "https://cdn.noitatnemucod.net/thumbnail/300x400/100/9cbcf87f54194742e7686119089478f8.jpg",
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
         backgroundColor: Colors.white,

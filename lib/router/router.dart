@@ -11,6 +11,7 @@ import '../features/authentication/screens/upload_documents_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
+import '../features/upi/screens/upi_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
 import 'routes.dart';
@@ -74,6 +75,10 @@ final router = GoRouter(
     GoRoute(
       path: Routes.setBudgetScreen,
       builder: (context, state) => const SetBudgetScreen(),
+    ),
+    GoRoute(
+      path: Routes.upiScreen,
+      builder: (context, state) => const UpiScreen(),
     ),
   ],
 );

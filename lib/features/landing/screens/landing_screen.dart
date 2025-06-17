@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/common_app_bar.dart';
 import '../../wallet/screens/wallet_screen.dart';
 import '../../upi/screens/upi_screen.dart';
 import '../../cards/screens/cards_screen.dart';
@@ -34,15 +33,7 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CommonAppBar(
-          userName: 'Albert Flores',
-          userAvatar: CircleAvatar(
-            radius: 30,
-            backgroundImage: NetworkImage(
-              "https://cdn.noitatnemucod.net/thumbnail/300x400/100/9cbcf87f54194742e7686119089478f8.jpg",
-            ),
-          ),
-        ),
+
         body: _screens[_selectedIndex],
         bottomNavigationBar: SizedBox(
           height: 60,

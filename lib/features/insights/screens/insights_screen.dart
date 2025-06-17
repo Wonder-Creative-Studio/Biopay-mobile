@@ -37,7 +37,13 @@ class _InsightsScreenState extends State<InsightsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          'Spending Insights',
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

@@ -10,7 +10,8 @@ class Routes {
   static const String uploadDocumentsScreen = '/upload-documents';
   static const String onboardingSuccess = '/onboarding-success';
   static const String landingScreen = '/landing';
-  static const String homeScreen = '/home';
+  static const String walletScreen = '/wallet';
   static const String insightsScreen = '/insights';
   static const String setBudgetScreen = '/set-budget';
+  static const String upiScreen = '/upi';
 }
