@@ -8,6 +8,8 @@ import '../features/authentication/screens/onboarding_success.dart';
 import '../features/authentication/screens/otp_screen.dart';
 import '../features/authentication/screens/signup_screen.dart';
 import '../features/authentication/screens/upload_documents_screen.dart';
+import '../features/insights/screens/insights_screen.dart';
+import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
@@ -64,6 +66,14 @@ final router = GoRouter(
     GoRoute(
       path: Routes.landingScreen,
       builder: (context, state) => const LandingScreen(),
+    ),
+    GoRoute(
+      path: Routes.insightsScreen,
+      builder: (context, state) => const InsightsScreen(),
+    ),
+    GoRoute(
+      path: Routes.setBudgetScreen,
+      builder: (context, state) => const SetBudgetScreen(),
     ),
   ],
 );

@@ -59,7 +59,7 @@ class _WalletScreenState extends State<WalletScreen> {
       backgroundAsset: Assets.aadharLinkCard,
       topRightAsset: "AEPS",
       topLeftWidget: Image.asset(Assets.aepsLogo, height: 24),
-      bottomCardNumber: 'UPI ID: Albert.business@biopay',
+      bottomCardNumber: 'Linked Aadhaar: XXXX-XXXX-1234',
       viewTransactionsText: 'View Transactions',
       viewTransactionsIcon: Icons.text_snippet,
       onViewTransactions: () {
@@ -70,7 +70,49 @@ class _WalletScreenState extends State<WalletScreen> {
       onCheckBalance: () {
         d.log("message");
       },
+      sendMoneyText: 'Cash Withdrawal',
+      sendMoneyIcon: Icons.line_axis_outlined,
+      onSendMoney: () {
+        d.log("message");
+      },
+    ),
+    UpiCard(
+      backgroundAsset: Assets.bankCard,
+      topRightAsset: "Cards",
+      topLeftWidget: Icon(Icons.credit_card),
+      bottomCardNumber: 'Linked Aadhaar: XXXX-XXXX-1234',
+      viewTransactionsText: 'View Transactions',
+      viewTransactionsIcon: Icons.text_snippet,
+      onViewTransactions: () {
+        d.log("message");
+      },
+      checkBalanceText: 'Card Details',
+      checkBalanceIcon: Icons.account_balance_wallet,
+      onCheckBalance: () {
+        d.log("message");
+      },
       sendMoneyText: 'Send Money',
+      sendMoneyIcon: Icons.arrow_upward,
+      onSendMoney: () {
+        d.log("message");
+      },
+    ),
+    UpiCard(
+      backgroundAsset: Assets.cryptoCard,
+      topRightAsset: "Crypto",
+      topLeftWidget: Image.asset(Assets.bitcoin, height: 24),
+      bottomCardNumber: 'Wallet Address: 0xAB...123F',
+      viewTransactionsText: 'View Transactions',
+      viewTransactionsIcon: Icons.text_snippet,
+      onViewTransactions: () {
+        d.log("message");
+      },
+      checkBalanceText: 'Crypto Balance',
+      checkBalanceIcon: Icons.account_balance_wallet,
+      onCheckBalance: () {
+        d.log("message");
+      },
+      sendMoneyText: 'Send Crypto',
       sendMoneyIcon: Icons.arrow_upward,
       onSendMoney: () {
         d.log("message");
@@ -91,56 +133,6 @@ class _WalletScreenState extends State<WalletScreen> {
         child: Column(
           children: [
             SizedBox(height: 20),
-
-            // SizedBox(
-            //   height: 350,
-            //   child: PageView(
-            //     children: [
-            //       UpiCard(
-            //         backgroundAsset: Assets.upiCard,
-            //         topRightAsset: 'UPI',
-            //         topLeftWidget: Image.asset(Assets.upiLogo, height: 24),
-            //         bottomCardNumber: 'UPI ID: Albert72@biopay',
-            //         viewTransactionsText: 'View Transactions',
-            //         viewTransactionsIcon: Icons.text_snippet,
-            //         onViewTransactions: () {
-            //           d.log("message");
-            //         },
-            //         checkBalanceText: 'Bank Balance',
-            //         checkBalanceIcon: Icons.account_balance_wallet,
-            //         onCheckBalance: () {
-            //           d.log("message");
-            //         },
-            //         sendMoneyText: 'Send Money',
-            //         sendMoneyIcon: Icons.arrow_upward,
-            //         onSendMoney: () {
-            //           d.log("message");
-            //         },
-            //       ),
-            //       UpiCard(
-            //         backgroundAsset: Assets.aadharLinkCard,
-            //         topRightAsset: "AEPS",
-            //         topLeftWidget: Image.asset(Assets.aepsLogo, height: 24),
-            //         bottomCardNumber: 'UPI ID: Albert.business@biopay',
-            //         viewTransactionsText: 'View Transactions',
-            //         viewTransactionsIcon: Icons.text_snippet,
-            //         onViewTransactions: () {
-            //           d.log("message");
-            //         },
-            //         checkBalanceText: 'Bank Balance',
-            //         checkBalanceIcon: Icons.account_balance_wallet,
-            //         onCheckBalance: () {
-            //           d.log("message");
-            //         },
-            //         sendMoneyText: 'Send Money',
-            //         sendMoneyIcon: Icons.arrow_upward,
-            //         onSendMoney: () {
-            //           d.log("message");
-            //         },
-            //       ),
-            //     ],
-            //   ),
-            // ),
             CarouselSlider(
               items: cardItems,
               options: CarouselOptions(
