@@ -5,6 +5,7 @@ import 'router/router.dart';
 import 'utils/size_utils.dart';
 
 Future<void> main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
