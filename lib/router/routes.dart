@@ -14,4 +14,8 @@ class Routes {
   static const String insightsScreen = '/insights';
   static const String setBudgetScreen = '/set-budget';
   static const String upiScreen = '/upi';
+  static const String contactScreen = '/contact';
+  static const String bankTransferScreen = '/bank-transfer';
+  static const String scanScreen = '/scan';
+  static const String paymentScreen = '/payment';
 }

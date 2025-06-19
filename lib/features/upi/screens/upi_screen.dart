@@ -1,5 +1,9 @@
 import 'package:biopay_mobile/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../router/routes.dart';
+import '../model/contact_argument.dart';
 
 class UpiScreen extends StatelessWidget {
   const UpiScreen({super.key});
@@ -31,25 +35,38 @@ class UpiScreen extends StatelessWidget {
                     context,
                     Icons.qr_code_scanner,
                     'Scan and Pay',
-                    () {},
+                    () {
+
+                      context.push(Routes.scanScreen); // pushes onto stack
+                    },
                   ),
                   _buildActionButton(
                     context,
                     Icons.person_outline,
                     'Pay Contact',
-                    () {},
+                    () {
+                      context.push(
+                        Routes.contactScreen,
+                        extra: const ContactArgument(isContactMode: true),
+                      );
+                    },
                   ),
                   _buildActionButton(
                     context,
                     Icons.account_balance,
                     'Bank Transfer',
-                    () {},
+                    () {
+                      context.push(Routes.bankTransferScreen); // pushes onto stack
+                    },
                   ),
                   _buildActionButton(
                     context,
                     Icons.phone_android,
                     'Pay Ph. No.',
-                    () {},
+                    () {
+
+                      context.push(Routes.paymentScreen); // pushes onto stack
+                    },
                   ),
                   _buildActionButton(
                     context,
@@ -84,8 +101,7 @@ class UpiScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
-                  color:
-                      Colors.white, // Assuming a dark theme based on the image
+                  color: Colors.white, // Assuming a dark theme based on the image
                 ),
               ),
               const SizedBox(height: 16.0),

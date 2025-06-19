@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+
 import '../features/authentication/models/otp_screen_arguments.dart';
 import '../features/authentication/screens/aadhar_kyc_screen.dart';
 import '../features/authentication/screens/link_bank_account_screen.dart';
@@ -10,10 +11,15 @@ import '../features/authentication/screens/signup_screen.dart';
 import '../features/authentication/screens/upload_documents_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
-import '../features/onboarding/screens/onboarding_screen.dart';
-import '../features/upi/screens/upi_screen.dart';
-import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
+import '../features/onboarding/screens/onboarding_screen.dart';
+import '../features/onboarding/screens/splash_screen.dart';
+import '../features/upi/model/contact_argument.dart';
+import '../features/upi/screens/bank_transfer_screen.dart';
+import '../features/upi/screens/contact_screen.dart';
+import '../features/upi/screens/payment_screen.dart';
+import '../features/upi/screens/scan_screen.dart';
+import '../features/upi/screens/upi_screen.dart';
 import 'routes.dart';
 
 final router = GoRouter(
@@ -79,6 +85,27 @@ final router = GoRouter(
     GoRoute(
       path: Routes.upiScreen,
       builder: (context, state) => const UpiScreen(),
+    ),
+    GoRoute(
+      path: Routes.contactScreen,
+      builder: (context, state) {
+        final args = state.extra as ContactArgument? ?? const ContactArgument(isContactMode: true);
+        return ContactScreen(argument: args);
+      },
+    ),
+    GoRoute(
+      path: Routes.bankTransferScreen,
+      builder: (context, state) {
+        return BankTransferScreen();
+      },
+    ),
+    GoRoute(
+      path: Routes.scanScreen,
+      builder: (context, state) => const ScanScreen(),
+    ),
+    GoRoute(
+      path: Routes.paymentScreen,
+      builder: (context, state) => const PaymentScreen(),
     ),
   ],
 );
