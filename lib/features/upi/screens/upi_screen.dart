@@ -1,18 +1,15 @@
 import 'package:biopay_mobile/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/basic_app_bar.dart';
+
 class UpiScreen extends StatelessWidget {
   const UpiScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'UPI',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
-        ),
-      ),
+      appBar: BasicAppBar(title: 'UPI', centerTitle: false, fontSize: 30),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

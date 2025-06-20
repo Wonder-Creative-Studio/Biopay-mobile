@@ -1,6 +1,7 @@
 import 'package:biopay_mobile/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../widgets/basic_app_bar.dart';
 import '../../../widgets/custom_filled_button.dart';
 import '../../../widgets/custom_input_field.dart';
 
@@ -17,16 +18,7 @@ class AddCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Add New Card"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            context.pop();
-          },
-        ),
-      ),
+      appBar: BasicAppBar(title: "Add New Card"),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Stack(

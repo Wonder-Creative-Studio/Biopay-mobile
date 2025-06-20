@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../../../widgets/basic_app_bar.dart';
 import '../../../widgets/transaction_item.dart';
 
 class CardTransactionsHistoryScreen extends StatelessWidget {
@@ -8,16 +8,7 @@ class CardTransactionsHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Transactions History"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            context.pop();
-          },
-        ),
-      ),
+      appBar: BasicAppBar(title: "Transactions History"),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(

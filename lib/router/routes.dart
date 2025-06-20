@@ -18,4 +18,7 @@ class Routes {
   static const String insightsScreen = '/insights';
   static const String setBudgetScreen = '/set-budget';
   static const String upiScreen = '/upi';
+  static const String cryptoOnboardingGettingStartedScreen = '/cryptoOnboardingGettingStarted';
+  static const String cryptoOnboardingWalletSetupScreen = '/cryptoOnboardingWalletSetup';
+  static const String cryptoOnboardingAuthorizationRequiredScreen = '/cryptoOnboardingAuthorizationRequired';
 }

@@ -13,4 +13,5 @@ class Assets {
   static final String upiLogo = '${basePath}upi_logo.png';
   static final String aepsLogo = '${basePath}aeps_logo.png';
   static final String bitcoin = '${basePath}bitcoin.png';
+  static final String metamask = '${basePath}metamask.png';
 }

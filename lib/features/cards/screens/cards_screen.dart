@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../router/routes.dart';
+import '../../../widgets/basic_app_bar.dart';
 import '../widgets/card_item_widget.dart';
 
 class CardsScreen extends StatelessWidget {
@@ -10,13 +11,7 @@ class CardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'My Cards',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
-        ),
-      ),
+      appBar: BasicAppBar(title: "My Cards"),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           context.push(Routes.addCardScreen);

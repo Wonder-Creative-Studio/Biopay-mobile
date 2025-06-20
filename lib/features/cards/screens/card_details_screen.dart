@@ -3,6 +3,7 @@ import 'package:biopay_mobile/widgets/custom_filled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../router/routes.dart';
+import '../../../widgets/basic_app_bar.dart';
 import '../../../widgets/transaction_item.dart';
 import '../widgets/card_item_widget.dart';
 
@@ -12,13 +13,7 @@ class CardDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Card Details',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
-        ),
-      ),
+      appBar: BasicAppBar(title: "Card Details"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

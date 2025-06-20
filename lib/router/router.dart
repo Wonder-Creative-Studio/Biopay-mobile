@@ -12,6 +12,9 @@ import '../features/cards/screens/card_details_screen.dart';
 import '../features/cards/screens/cards_screen.dart';
 import '../features/cards/screens/add_card_screen.dart';
 import '../features/cards/screens/card_transactions_history_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_getting_started_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_wallet_setup_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_authorization_required_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -99,6 +102,18 @@ final router = GoRouter(
     GoRoute(
       path: Routes.cardTransactionsHistoryScreen,
       builder: (context, state) => const CardTransactionsHistoryScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingGettingStartedScreen,
+      builder: (context, state) => const CryptoOnboardingGettingStartedScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingWalletSetupScreen,
+      builder: (context, state) => const CryptoOnboardingWalletSetupScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingAuthorizationRequiredScreen,
+      builder: (context, state) => const CryptoOnboardingAuthorizationRequiredScreen(),
     ),
   ],
 );

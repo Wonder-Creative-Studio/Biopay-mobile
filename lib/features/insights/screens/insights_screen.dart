@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
+import '../../../widgets/basic_app_bar.dart';
 import '../widgets/spending_insights_chart.dart';
 import '../widgets/category_progress_bar.dart';
 import '../../../widgets/transaction_item.dart';
@@ -37,13 +38,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Spending Insights',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-        ),
-      ),
+      appBar: BasicAppBar(title: 'Spending Insights'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

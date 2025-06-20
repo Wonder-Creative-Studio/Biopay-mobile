@@ -1,3 +1,4 @@
+import 'package:biopay_mobile/widgets/basic_app_bar.dart';
 import 'package:biopay_mobile/widgets/custom_filled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -77,24 +78,7 @@ class _SetBudgetScreenState extends State<SetBudgetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: const Text(
-          'Set Your Budget',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      appBar: BasicAppBar(title: "Set Budget"),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
