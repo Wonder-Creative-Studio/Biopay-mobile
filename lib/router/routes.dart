@@ -11,6 +11,9 @@ class Routes {
   static const String onboardingSuccess = '/onboarding-success';
   static const String landingScreen = '/landing';
   static const String walletScreen = '/wallet';
+  static const String cardsScreen = '/cards';
+  static const String cardDetailsScreen = '/cardDetails';
+  static const String addCardScreen = '/addCard';
   static const String insightsScreen = '/insights';
   static const String setBudgetScreen = '/set-budget';
   static const String upiScreen = '/upi';

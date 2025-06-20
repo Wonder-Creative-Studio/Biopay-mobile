@@ -8,6 +8,9 @@ import '../features/authentication/screens/onboarding_success.dart';
 import '../features/authentication/screens/otp_screen.dart';
 import '../features/authentication/screens/signup_screen.dart';
 import '../features/authentication/screens/upload_documents_screen.dart';
+import '../features/cards/screens/card_details_screen.dart';
+import '../features/cards/screens/cards_screen.dart';
+import '../features/cards/screens/add_card_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -79,6 +82,18 @@ final router = GoRouter(
     GoRoute(
       path: Routes.upiScreen,
       builder: (context, state) => const UpiScreen(),
+    ),
+        GoRoute(
+      path: Routes.cardsScreen,
+      builder: (context, state) => const CardsScreen(),
+    ),
+    GoRoute(
+      path: Routes.cardDetailsScreen,
+      builder: (context, state) => const CardDetailsScreen(),
+    ),
+    GoRoute(
+      path: Routes.addCardScreen,
+      builder: (context, state) => AddCardScreen(),
     ),
   ],
 );

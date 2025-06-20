@@ -33,7 +33,6 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: _screens[_selectedIndex],
         bottomNavigationBar: SizedBox(
           height: 60,

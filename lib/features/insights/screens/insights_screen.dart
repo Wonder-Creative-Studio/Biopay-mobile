@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import '../widgets/spending_insights_chart.dart';
 import '../widgets/category_progress_bar.dart';
-import '../widgets/transaction_item.dart';
+import '../../../widgets/transaction_item.dart';
 import '../../../router/routes.dart';
 
 class InsightsScreen extends StatefulWidget {
