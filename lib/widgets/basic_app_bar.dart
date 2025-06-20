@@ -4,12 +4,14 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool centerTitle;
   final double fontSize;
   final String title;
+  final List<Widget>? actions;
 
   const BasicAppBar({
     super.key,
+    required this.title,
     this.centerTitle = true,
     this.fontSize = 22,
-    required this.title,
+    this.actions,
   });
 
   @override
@@ -23,13 +25,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w500),
       ),
-
-      // leading: IconButton(
-      //   icon: const Icon(Icons.arrow_back),
-      //   onPressed: () {
-      //     context.pop();
-      //   },
-      // ),
+      actions: actions,
     );
   }
 }

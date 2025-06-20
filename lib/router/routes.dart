@@ -26,4 +26,7 @@ class Routes {
   static const String cryptoOnboardingSetUpiPinScreen = '/cryptoOnboardingSetUpiPin';
   static const String cryptoOnboardingWalletConnectedScreen = '/cryptoOnboardingWalletConnected';
   static const String cryptoScreen = '/crypto';
+  static const String cryptoBalanceScreen = '/cryptoBalance';
+  static const String cryptoTransactionHistoryScreen = '/cryptoTransactionHistory';
+  static const String receiveCryptoScreen = '/receiveCrypto';
 }

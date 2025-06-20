@@ -33,7 +33,7 @@ class CryptoOnboardingWalletConnectedScreen extends StatelessWidget {
             const Expanded(child: SizedBox()),
             CustomFilledButton(
               onPressed: () {
-                context.go(Routes.cryptoScreen);
+                context.go(Routes.landingScreen, extra: 3);
               },
               title: "Continue",
             ),

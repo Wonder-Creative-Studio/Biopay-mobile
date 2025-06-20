@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../router/routes.dart';
 import '../../wallet/screens/wallet_screen.dart';
 import '../../upi/screens/upi_screen.dart';
 import '../../cards/screens/cards_screen.dart';
 import '../../crypto/screens/crypto_screen.dart';
-import 'package:go_router/go_router.dart';
 import '../../insights/screens/insights_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({super.key});
+  final int selectedIndex;
+
+  const LandingScreen({super.key, this.selectedIndex = 0});
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
@@ -25,23 +25,16 @@ class _LandingScreenState extends State<LandingScreen> {
     const InsightsScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    if (index == 3) {
-      bool needsOnboarding = true;
+  @override
+  void initState() {
+    _selectedIndex = widget.selectedIndex;
+    super.initState();
+  }
 
-      if (needsOnboarding) {
-        GoRouter.of(context).push(Routes.cryptoOnboardingGettingStartedScreen);
-      }
-      // else {
-      //   setState(() {
-      //     _selectedIndex = index;
-      //   });
-      // }
-    } else {
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
