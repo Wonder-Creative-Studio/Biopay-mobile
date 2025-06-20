@@ -101,6 +101,8 @@ class AddCardScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: 0,
+              left: 0,
+              right: 0,
               child: Column(
                 children: [
                   CustomFilledButton(onPressed: () {}, title: "Continue"),

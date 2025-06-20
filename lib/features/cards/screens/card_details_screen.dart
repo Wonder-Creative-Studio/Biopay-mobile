@@ -1,6 +1,8 @@
 import 'package:biopay_mobile/constants/colors.dart';
 import 'package:biopay_mobile/widgets/custom_filled_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../../router/routes.dart';
 import '../../../widgets/transaction_item.dart';
 import '../widgets/card_item_widget.dart';
 
@@ -54,7 +56,7 @@ class CardDetailsScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              _buildRecentTransactions(),
+              _buildRecentTransactions(context),
             ],
           ),
         ),
@@ -62,7 +64,7 @@ class CardDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRecentTransactions() {
+  Widget _buildRecentTransactions(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -79,7 +81,7 @@ class CardDetailsScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // Navigate to all transactions
+                context.push(Routes.cardTransactionsHistoryScreen);
               },
               child: const Text(
                 'View All',

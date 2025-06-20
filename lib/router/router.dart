@@ -11,6 +11,7 @@ import '../features/authentication/screens/upload_documents_screen.dart';
 import '../features/cards/screens/card_details_screen.dart';
 import '../features/cards/screens/cards_screen.dart';
 import '../features/cards/screens/add_card_screen.dart';
+import '../features/cards/screens/card_transactions_history_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -94,6 +95,10 @@ final router = GoRouter(
     GoRoute(
       path: Routes.addCardScreen,
       builder: (context, state) => AddCardScreen(),
+    ),
+    GoRoute(
+      path: Routes.cardTransactionsHistoryScreen,
+      builder: (context, state) => const CardTransactionsHistoryScreen(),
     ),
   ],
 );

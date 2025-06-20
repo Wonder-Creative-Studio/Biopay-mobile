@@ -14,6 +14,7 @@ class Routes {
   static const String cardsScreen = '/cards';
   static const String cardDetailsScreen = '/cardDetails';
   static const String addCardScreen = '/addCard';
+  static const String cardTransactionsHistoryScreen = '/cardTransactionsHistory';
   static const String insightsScreen = '/insights';
   static const String setBudgetScreen = '/set-budget';
   static const String upiScreen = '/upi';
