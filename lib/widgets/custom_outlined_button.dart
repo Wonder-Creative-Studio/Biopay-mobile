@@ -25,7 +25,7 @@ class CustomOutlinedButton extends StatelessWidget {
     this.backgroundColor,
     this.bottomMargin = 0,
     this.bottomSafeArea = true,
-    this.isExpanded = false,
+    this.isExpanded = true,
     this.borderRadius = 15,
     this.width,
     this.height,

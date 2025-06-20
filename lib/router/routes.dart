@@ -33,4 +33,7 @@ class Routes {
   static const String sendCryptoPreviewScreen = '/sendCryptoPreview';
   static const String sendCryptoPinScreen = '/sendCryptoPin';
   static const String sendCryptoSuccessScreen = '/sendCryptoSuccess';
+  static const String metamaskWhatIsScreen = '/metamaskWhatIs';
+  static const String metamaskCreateAccountScreen = '/metamaskCreateAccount';
+  static const String metamaskAddCryptoScreen = '/metamaskAddCrypto';
 }

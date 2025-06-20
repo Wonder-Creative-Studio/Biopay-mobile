@@ -52,9 +52,7 @@ class CryptoBalanceScreen extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       TextButton(
-                        onPressed: () {
-                          // TODO: Implement refresh wallet action
-                        },
+                        onPressed: () {},
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           minimumSize: Size.zero,

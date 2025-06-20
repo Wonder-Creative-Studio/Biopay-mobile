@@ -17,7 +17,9 @@ class CryptoScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_outlined),
-            onPressed: () {},
+            onPressed: () {
+              context.push(Routes.metamaskWhatIsScreen);
+            },
           ),
         ],
       ),

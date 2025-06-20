@@ -26,6 +26,9 @@ import '../features/crypto/screens/send_crypto_form_screen.dart';
 import '../features/crypto/screens/send_crypto_preview_screen.dart';
 import '../features/crypto/screens/send_crypto_pin_screen.dart';
 import '../features/crypto/screens/send_crypto_success_screen.dart';
+import '../features/crypto/screens/metamask_what_is_screen.dart';
+import '../features/crypto/screens/metamask_create_account_screen.dart';
+import '../features/crypto/screens/metamask_add_crypto_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -174,6 +177,18 @@ final router = GoRouter(
     GoRoute(
       path: Routes.sendCryptoSuccessScreen,
       builder: (context, state) => const SendCryptoSuccessScreen(),
+    ),
+    GoRoute(
+      path: Routes.metamaskWhatIsScreen,
+      builder: (context, state) => const MetamaskWhatIsScreen(),
+    ),
+    GoRoute(
+      path: Routes.metamaskCreateAccountScreen,
+      builder: (context, state) => const MetamaskCreateAccountScreen(),
+    ),
+    GoRoute(
+      path: Routes.metamaskAddCryptoScreen,
+      builder: (context, state) => const MetamaskAddCryptoScreen(),
     ),
   ],
 );
