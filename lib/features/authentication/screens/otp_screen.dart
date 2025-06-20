@@ -1,9 +1,9 @@
-import 'package:biopay_mobile/features/authentication/models/otp_screen_arguments.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../utils/size_utils.dart';
 import '../../../widgets/custom_filled_button.dart';
+import '../models/otp_screen_arguments.dart';
 
 class OtpScreen extends StatefulWidget {
   final OtpScreenArguments args;
@@ -27,7 +27,7 @@ class _OtpScreenState extends State<OtpScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40), // Add some space at the top
+            const SizedBox(height: 40),
             Text(
               widget.args.title,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -64,13 +64,14 @@ class _OtpScreenState extends State<OtpScreen> {
                             fontSize: 20,
                             color: Colors.white,
                           ),
-                          // pinContentAlignment: MainAxisAlignment.center,
                         ),
                       ),
                     ),
                     const SizedBox(height: 24),
                     CustomFilledButton(
-                      onPressed: widget.args.onVerify,
+                      onPressed: () {
+                        widget.args.onVerify();
+                      },
                       title: "Verify & Continue",
                     ),
                   ],
@@ -94,7 +95,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ),
-            const SizedBox(height: 24), // Add some space at the bottom
+            const SizedBox(height: 24),
           ],
         ),
       ),

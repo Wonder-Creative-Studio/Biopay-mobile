@@ -15,6 +15,10 @@ import '../features/cards/screens/card_transactions_history_screen.dart';
 import '../features/crypto/screens/crypto_onboarding_getting_started_screen.dart';
 import '../features/crypto/screens/crypto_onboarding_wallet_setup_screen.dart';
 import '../features/crypto/screens/crypto_onboarding_authorization_required_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_connect_wallet_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_waiting_for_approval_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_set_upi_pin_screen.dart';
+import '../features/crypto/screens/crypto_onboarding_wallet_connected_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -114,6 +118,22 @@ final router = GoRouter(
     GoRoute(
       path: Routes.cryptoOnboardingAuthorizationRequiredScreen,
       builder: (context, state) => const CryptoOnboardingAuthorizationRequiredScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingConnectWalletScreen,
+      builder: (context, state) => CryptoOnboardingConnectWalletScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingWaitingForApprovalScreen,
+      builder: (context, state) => const CryptoOnboardingWaitingForApprovalScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingSetUpiPinScreen,
+      builder: (context, state) => CryptoOnboardingSetUpiPinScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOnboardingWalletConnectedScreen,
+      builder: (context, state) => const CryptoOnboardingWalletConnectedScreen(),
     ),
   ],
 );

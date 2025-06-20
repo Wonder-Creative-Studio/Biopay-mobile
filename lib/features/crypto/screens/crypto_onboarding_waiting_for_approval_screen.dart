@@ -5,8 +5,8 @@ import '../../../router/routes.dart';
 import '../../../widgets/basic_app_bar.dart';
 import '../../../widgets/custom_filled_button.dart';
 
-class CryptoOnboardingAuthorizationRequiredScreen extends StatelessWidget {
-  const CryptoOnboardingAuthorizationRequiredScreen({super.key});
+class CryptoOnboardingWaitingForApprovalScreen extends StatelessWidget {
+  const CryptoOnboardingWaitingForApprovalScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,31 +19,32 @@ class CryptoOnboardingAuthorizationRequiredScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 24),
             Text(
-              "Authorization Required",
+              "Waiting for Approval",
               style: Theme.of(
                 context,
-              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+              ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
-              "MetaMask will ask for your permission to connect with Bio Pay",
+              "A connection request was sent to MetaMask. Please approve it to continue.",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            const SizedBox(height: 80),
-            Center(child: Image.asset(Assets.metamask, height: 150)),
-            const SizedBox(height: 80),
-            CustomFilledButton(
-              onPressed: () {
-                context.push(Routes.cryptoOnboardingConnectWalletScreen);
-              },
-              title: "Proceed to Authorize",
+            const SizedBox(height: 40),
+            Center(child: Image.asset(Assets.waitingForMetamask, height: 400)),
+            const SizedBox(height: 24),
+            Center(
+              child: Text(
+                "Not seeing anything? Ensure MetaMask is open and you are logged in.",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
             Spacer(),
-            Center(
-              child: TextButton(
-                onPressed: () {},
-                child: const Text("Don’t have MetaMask? Get MetaMask"),
-              ),
+            CustomFilledButton(
+              onPressed: () {
+                context.push(Routes.cryptoOnboardingSetUpiPinScreen);
+              },
+              title: "Check Again",
             ),
           ],
         ),

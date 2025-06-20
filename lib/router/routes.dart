@@ -21,4 +21,9 @@ class Routes {
   static const String cryptoOnboardingGettingStartedScreen = '/cryptoOnboardingGettingStarted';
   static const String cryptoOnboardingWalletSetupScreen = '/cryptoOnboardingWalletSetup';
   static const String cryptoOnboardingAuthorizationRequiredScreen = '/cryptoOnboardingAuthorizationRequired';
+  static const String cryptoOnboardingConnectWalletScreen = '/cryptoOnboardingConnectWallet';
+  static const String cryptoOnboardingWaitingForApprovalScreen = '/cryptoOnboardingWaitingForApproval';
+  static const String cryptoOnboardingSetUpiPinScreen = '/cryptoOnboardingSetUpiPin';
+  static const String cryptoOnboardingWalletConnectedScreen = '/cryptoOnboardingWalletConnected';
+  static const String cryptoScreen = '/crypto';
 }
