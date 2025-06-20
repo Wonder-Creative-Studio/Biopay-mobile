@@ -87,7 +87,9 @@ class CryptoScreen extends StatelessWidget {
                     context,
                     Icons.arrow_upward,
                     "Send Crypto",
-                    () {},
+                    () {
+                      context.push(Routes.sendCryptoFormScreen);
+                    },
                   ),
                 ),
                 const SizedBox(width: 16),

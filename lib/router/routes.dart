@@ -29,4 +29,8 @@ class Routes {
   static const String cryptoBalanceScreen = '/cryptoBalance';
   static const String cryptoTransactionHistoryScreen = '/cryptoTransactionHistory';
   static const String receiveCryptoScreen = '/receiveCrypto';
+  static const String sendCryptoFormScreen = '/sendCryptoForm';
+  static const String sendCryptoPreviewScreen = '/sendCryptoPreview';
+  static const String sendCryptoPinScreen = '/sendCryptoPin';
+  static const String sendCryptoSuccessScreen = '/sendCryptoSuccess';
 }

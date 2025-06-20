@@ -22,6 +22,10 @@ import '../features/crypto/screens/crypto_onboarding_wallet_connected_screen.dar
 import '../features/crypto/screens/crypto_balance_screen.dart';
 import '../features/crypto/screens/crypto_transaction_history_screen.dart';
 import '../features/crypto/screens/receive_crypto_screen.dart';
+import '../features/crypto/screens/send_crypto_form_screen.dart';
+import '../features/crypto/screens/send_crypto_preview_screen.dart';
+import '../features/crypto/screens/send_crypto_pin_screen.dart';
+import '../features/crypto/screens/send_crypto_success_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
@@ -154,6 +158,22 @@ final router = GoRouter(
     GoRoute(
       path: Routes.receiveCryptoScreen,
       builder: (context, state) => const ReceiveCryptoScreen(),
+    ),
+    GoRoute(
+      path: Routes.sendCryptoFormScreen,
+      builder: (context, state) => const SendCryptoFormScreen(),
+    ),
+    GoRoute(
+      path: Routes.sendCryptoPreviewScreen,
+      builder: (context, state) => const SendCryptoPreviewScreen(),
+    ),
+    GoRoute(
+      path: Routes.sendCryptoPinScreen,
+      builder: (context, state) => const SendCryptoPinScreen(),
+    ),
+    GoRoute(
+      path: Routes.sendCryptoSuccessScreen,
+      builder: (context, state) => const SendCryptoSuccessScreen(),
     ),
   ],
 );
