@@ -54,7 +54,6 @@ class BankTransferScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: CustomFilledButton(
-
                 onPressed: () {
                   // TODO: Implement continue action
                 },title: "Continue",
