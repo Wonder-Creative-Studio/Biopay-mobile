@@ -13,4 +13,8 @@ class Assets {
   static final String upiLogo = '${basePath}upi_logo.png';
   static final String aepsLogo = '${basePath}aeps_logo.png';
   static final String bitcoin = '${basePath}bitcoin.png';
+  static final String sbiCard = '${basePath}sbi_card.png';
+  static final String canraCard = '${basePath}canra_card.png';
+  static final String hdfcCard = '${basePath}hdfc_card.png';
+  static final String rocketSuccess = '${basePath}rocket_success.png';
 }

@@ -18,4 +18,8 @@ class Routes {
   static const String bankTransferScreen = '/bank-transfer';
   static const String scanScreen = '/scan';
   static const String paymentScreen = '/payment';
+  static const String enterUpiPinScreen = '/enterUpiPin';
+  static const String transectionSuccessScreen = '/transectionSuccess';
+  static const String linkYourUpiScreen = '/linkYourUpi';
+  static const String bankBalanceScreen = '/bankBalance';
 }
