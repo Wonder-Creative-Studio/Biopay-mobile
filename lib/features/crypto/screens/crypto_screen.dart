@@ -5,10 +5,15 @@ class CryptoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Crypto Screen',
-        style: TextStyle(fontSize: 24),
+    return Center(
+      child: GestureDetector(
+        onTap: (){
+          
+        },
+        child: Text(
+          'Crypto Screen',
+          style: TextStyle(fontSize: 24),
+        ),
       ),
     );
   }

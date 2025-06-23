@@ -17,4 +17,5 @@ class Assets {
   static final String canraCard = '${basePath}canra_card.png';
   static final String hdfcCard = '${basePath}hdfc_card.png';
   static final String rocketSuccess = '${basePath}rocket_success.png';
+  static final String qrCode = '${basePath}qrcode.png';
 }

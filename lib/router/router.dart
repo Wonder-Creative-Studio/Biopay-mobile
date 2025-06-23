@@ -1,6 +1,8 @@
 import 'package:biopay_mobile/features/upi/screens/bank_balnace_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/enter_upi_pin_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/link_your_upi_screen.dart';
+import 'package:biopay_mobile/features/upi/screens/receive_money_screen.dart';
+import 'package:biopay_mobile/features/upi/screens/transection_histry_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/transection_success_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -126,6 +128,14 @@ final router = GoRouter(
     GoRoute(
       path: Routes.bankBalanceScreen,
       builder: (context, state) => BankBalnaceScreen(),
+    ),
+    GoRoute(
+      path: Routes.transectionHistryScreen,
+      builder: (context, state) => TransectionHistryScreen(),
+    ),
+    GoRoute(
+      path: Routes.receiveMoneyScreen,
+      builder: (context, state) => ReceiveMoneyScreen(),
     ),
   ],
 );

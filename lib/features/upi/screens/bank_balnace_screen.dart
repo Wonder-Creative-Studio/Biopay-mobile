@@ -1,4 +1,6 @@
+import 'package:biopay_mobile/router/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BankBalnaceScreen extends StatefulWidget {
   const BankBalnaceScreen({super.key});
@@ -33,42 +35,47 @@ class _BankBalnaceScreenState extends State<BankBalnaceScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
-          width: double.infinity,
-          height: 200,
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: const Color(0xFF1C1C1E),
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                balance,
-                style: const TextStyle(
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+        child: GestureDetector(
+          onTap: (){
+            context.push(Routes.transectionHistryScreen);
+          },
+          child: Container(
+            width: double.infinity,
+            height: 200,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1C1C1E),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  balance,
+                  style: const TextStyle(
+                    fontSize: 32,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                bankName,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
+                const SizedBox(height: 20),
+                Text(
+                  bankName,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                accountNumber,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
+                const SizedBox(height: 6),
+                Text(
+                  accountNumber,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

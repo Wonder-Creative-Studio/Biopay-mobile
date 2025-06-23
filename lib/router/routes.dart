@@ -22,4 +22,6 @@ class Routes {
   static const String transectionSuccessScreen = '/transectionSuccess';
   static const String linkYourUpiScreen = '/linkYourUpi';
   static const String bankBalanceScreen = '/bankBalance';
+  static const String transectionHistryScreen = '/transectionHistry';
+  static const String receiveMoneyScreen = '/receiveMoney';
 }
