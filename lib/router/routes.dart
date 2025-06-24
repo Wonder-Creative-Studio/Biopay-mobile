@@ -24,4 +24,23 @@ class Routes {
   static const String bankBalanceScreen = '/bankBalance';
   static const String transectionHistryScreen = '/transectionHistry';
   static const String receiveMoneyScreen = '/receiveMoney';
+
+  static const String cryptoVideoScreen = '/cryptoVideo';
+  static const String cryptoWalletSetupScreen = '/cryptoWalletSetup';
+  static const String cryptoSignInScreen = '/cryptoSignIn';
+  static const String cryptoOtpScreen = '/cryptoOtp';
+  static const String cryptoWaitingScreen = '/cryptoWaiting';
+  static const String cryptoSetUpiSrceen = '/cryptoSetUpi';
+  static const String cryptoConnectScreen = '/cryptoConnect';
+  static const String cryptoHomeScreen = '/cryptoHome';
+  static const String cryptoBalanceScreen = '/cryptoBalance';
+  static const String sendCryptoScreen = '/sendCrypto';
+  static const String previewTransectionScreen = '/previewTransection';
+  static const String enterPinScreen = '/enterPin';
+  static const String transactionSuccessScreen = '/previewTransection';
+  static const String receiveCryptoQrScreen = '/previewTransection';
+  static const String whatMetataskScreen = '/previewTransection';
+  static const String howCreateMetaScreen = '/previewTransection';
+  static const String howAddCryptoScreen = '/previewTransection';
+
 }

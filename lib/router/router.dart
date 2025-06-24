@@ -1,3 +1,19 @@
+import 'package:biopay_mobile/features/crypto/screens/crypto_balance_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_connect_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_home_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_otp_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_set_upi_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_signin_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_video_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_waiting_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/crypto_wallet_setup_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/enter_pin_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/how_add_crypto_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/how_create_meta_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/preview_transection_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/receive_crypto_qr_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/send_crypto_screen.dart';
+import 'package:biopay_mobile/features/crypto/screens/what_metatask_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/bank_balnace_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/enter_upi_pin_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/link_your_upi_screen.dart';
@@ -136,6 +152,74 @@ final router = GoRouter(
     GoRoute(
       path: Routes.receiveMoneyScreen,
       builder: (context, state) => ReceiveMoneyScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoVideoScreen,
+      builder: (context, state) => CryptoVideoScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoWalletSetupScreen,
+      builder: (context, state) => CryptoWalletSetupScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoSignInScreen,
+      builder: (context, state) => CryptoSigninScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoOtpScreen,
+      builder: (context, state) => CryptoOtpScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoWaitingScreen,
+      builder: (context, state) => CryptoWaitingScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoSetUpiSrceen,
+      builder: (context, state) => CryptoSetUpiScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoConnectScreen,
+      builder: (context, state) => CryptoConnectScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoHomeScreen,
+      builder: (context, state) => CryptoHomeScreen(),
+    ),
+    GoRoute(
+      path: Routes.cryptoBalanceScreen,
+      builder: (context, state) => CryptoBalanceScreen(),
+    ),
+    GoRoute(
+      path: Routes.sendCryptoScreen,
+      builder: (context, state) => SendCryptoScreen(),
+    ),
+    GoRoute(
+      path: Routes.previewTransectionScreen,
+      builder: (context, state) => PreviewTransectionScreen(),
+    ),
+    GoRoute(
+      path: Routes.enterPinScreen,
+      builder: (context, state) => EnterPinScreen(),
+    ),
+    GoRoute(
+      path: Routes.transactionSuccessScreen,
+      builder: (context, state) => TransactionSuccessScreen(),
+    ),
+    GoRoute(
+      path: Routes.receiveCryptoQrScreen,
+      builder: (context, state) => ReceiveCryptoQrScreen(),
+    ),
+    GoRoute(
+      path: Routes.whatMetataskScreen,
+      builder: (context, state) => WhatMetataskScreen(),
+    ),
+    GoRoute(
+      path: Routes.howCreateMetaScreen,
+      builder: (context, state) => HowCreateMetaScreen(),
+    ),
+    GoRoute(
+      path: Routes.howAddCryptoScreen,
+      builder: (context, state) => HowAddCryptoScreen(),
     ),
   ],
 );
