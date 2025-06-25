@@ -37,7 +37,13 @@ import '../features/profile/screens/profile_settings_screen.dart';
 import '../features/upi/screens/upi_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
+import '../features/bank_accounts/screens/bank_accounts_screen.dart';
+import '../features/bank_accounts/screens/add_bank_screen.dart';
+import '../features/bank_accounts/screens/select_account_screen.dart';
+import '../features/bank_accounts/screens/verify_account_screen.dart';
 import 'routes.dart';
+import '../features/bank_accounts/screens/set_upi_pin_screen.dart';
+import '../features/bank_accounts/screens/account_linked_success_screen.dart';
 
 final router = GoRouter(
   initialLocation: Routes.landingScreen,
@@ -199,6 +205,30 @@ final router = GoRouter(
     GoRoute(
       path: Routes.profileSettingsScreen,
       builder: (context, state) => const ProfileSettingsScreen(),
+    ),
+    GoRoute(
+      path: Routes.bankAccountsScreen,
+      builder: (context, state) => const BankAccountsScreen(),
+    ),
+    GoRoute(
+      path: Routes.addBankScreen,
+      builder: (context, state) => const AddBankScreen(),
+    ),
+    GoRoute(
+      path: Routes.selectAccountScreen,
+      builder: (context, state) => const SelectAccountScreen(),
+    ),
+    GoRoute(
+      path: Routes.verifyAccountScreen,
+      builder: (context, state) => const VerifyAccountScreen(),
+    ),
+    GoRoute(
+      path: Routes.setUpiPinScreen,
+      builder: (context, state) => const SetUpiPinScreen(),
+    ),
+    GoRoute(
+      path: Routes.accountLinkedSuccessScreen,
+      builder: (context, state) => const AccountLinkedSuccessScreen(),
     ),
   ],
 );

@@ -85,7 +85,14 @@ class ProfileScreen extends StatelessWidget {
             'Personal Information',
           ),
           _buildOptionItem(context, Icons.qr_code, 'Your QR Code'),
-          _buildOptionItem(context, Icons.business_outlined, 'Bank Accounts'),
+          _buildOptionItem(
+            context,
+            Icons.account_balance,
+            'Bank Accounts',
+            onTap: () {
+              context.push(Routes.bankAccountsScreen);
+            },
+          ),
           _buildOptionItem(context, Icons.receipt_rounded, 'Recent Payments'),
           _buildOptionItem(context, Icons.credit_card, 'Linked Financials'),
           _buildOptionItem(

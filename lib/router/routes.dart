@@ -38,4 +38,10 @@ class Routes {
   static const String metamaskAddCryptoScreen = '/metamaskAddCrypto';
   static const String profileScreen = '/profile';
   static const String profileSettingsScreen = '/profileSettings';
+  static const String bankAccountsScreen = '/bankAccounts';
+  static const String addBankScreen = '/addBank';
+  static const String selectAccountScreen = '/selectAccount';
+  static const String verifyAccountScreen = '/verifyAccount';
+  static const String setUpiPinScreen = '/setUpiPin';
+  static const String accountLinkedSuccessScreen = '/accountLinkedSuccess';
 }
