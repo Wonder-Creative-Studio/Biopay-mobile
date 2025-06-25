@@ -1,5 +1,6 @@
 import 'package:biopay_mobile/constants/assets.dart';
 import 'package:biopay_mobile/features/upi/model/BankCard.dart';
+import 'package:biopay_mobile/features/upi/model/payment_argument.dart';
 import 'package:biopay_mobile/router/routes.dart';
 import 'package:biopay_mobile/utils/size_utils.dart';
 import 'package:biopay_mobile/widgets/custom_filled_button.dart';
@@ -7,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PaymentScreen extends StatefulWidget {
-  const PaymentScreen({super.key});
+  final PaymentArguments args;
+  const PaymentScreen({super.key, required this.args});
 
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
@@ -32,6 +34,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   void initState() {
     super.initState();
+    if(widget.args.showCardSelectionValue)
+    {
+      setState(() {
+        showCardSelection = true;
+        amount = widget.args.amt;
+      });
+    }
+
     if (cards.isNotEmpty) {
       selectedCard = cards[0];
     }

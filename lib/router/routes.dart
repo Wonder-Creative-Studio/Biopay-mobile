@@ -43,4 +43,9 @@ class Routes {
   static const String howCreateMetaScreen = '/previewTransection';
   static const String howAddCryptoScreen = '/previewTransection';
 
+  static const String mobileRechargeScreen = '/mobileRecharge';
+  static const String mobileOperatorScreen = '/mobileOperator';
+  static const String mobileSelectPlanScreen = '/mobileSelectPlan';
+  static const String mobilePlanDetailScreen = '/mobilePlanDetail';
+
 }

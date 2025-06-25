@@ -1,4 +1,5 @@
 import 'package:biopay_mobile/constants/colors.dart';
+import 'package:biopay_mobile/features/upi/model/payment_argument.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -64,8 +65,8 @@ class UpiScreen extends StatelessWidget {
                     Icons.phone_android,
                     'Pay Ph. No.',
                     () {
-
-                      context.push(Routes.paymentScreen); // pushes onto stack
+                      // context.push(Routes.paymentScreen);
+                      context.push(Routes.paymentScreen,extra: PaymentArguments(amt: '', showCardSelectionValue: false));
                     },
                   ),
                   _buildActionButton(
@@ -90,7 +91,9 @@ class UpiScreen extends StatelessWidget {
                     context,
                     Icons.mobile_friendly,
                     'Mobile Recharge',
-                    () {},
+                    () {
+                      context.push(Routes.mobileRechargeScreen); // pushes onto stack
+                    },
                   ),
                   _buildActionButton(context, Icons.link, 'Link UPI', () {}),
                 ],

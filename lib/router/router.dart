@@ -14,6 +14,11 @@ import 'package:biopay_mobile/features/crypto/screens/preview_transection_screen
 import 'package:biopay_mobile/features/crypto/screens/receive_crypto_qr_screen.dart';
 import 'package:biopay_mobile/features/crypto/screens/send_crypto_screen.dart';
 import 'package:biopay_mobile/features/crypto/screens/what_metatask_screen.dart';
+import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_operator_screen.dart';
+import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_plandetail_screen.dart';
+import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_recharge_screen.dart';
+import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_selectplan_screen.dart';
+import 'package:biopay_mobile/features/upi/model/payment_argument.dart';
 import 'package:biopay_mobile/features/upi/screens/bank_balnace_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/enter_upi_pin_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/link_your_upi_screen.dart';
@@ -127,7 +132,12 @@ final router = GoRouter(
     ),
     GoRoute(
       path: Routes.paymentScreen,
-      builder: (context, state) => const PaymentScreen(),
+      builder: (context, state) {
+        final arguments = state.extra as PaymentArguments;
+        return PaymentScreen(
+          args: arguments,
+        );
+        },
     ),
     GoRoute(
       path: Routes.enterUpiPinScreen,
@@ -220,6 +230,22 @@ final router = GoRouter(
     GoRoute(
       path: Routes.howAddCryptoScreen,
       builder: (context, state) => HowAddCryptoScreen(),
+    ),
+    GoRoute(
+      path: Routes.mobileRechargeScreen,
+      builder: (context, state) => MobileRechargeScreen(),
+    ),
+    GoRoute(
+      path: Routes.mobileOperatorScreen,
+      builder: (context, state) => MobileOperatorScreen(),
+    ),
+    GoRoute(
+      path: Routes.mobileSelectPlanScreen,
+      builder: (context, state) => MobileSelectplanScreen(),
+    ),
+    GoRoute(
+      path: Routes.mobilePlanDetailScreen,
+      builder: (context, state) => MobilePlandetailScreen(),
     ),
   ],
 );
