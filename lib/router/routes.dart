@@ -36,4 +36,6 @@ class Routes {
   static const String metamaskWhatIsScreen = '/metamaskWhatIs';
   static const String metamaskCreateAccountScreen = '/metamaskCreateAccount';
   static const String metamaskAddCryptoScreen = '/metamaskAddCrypto';
+  static const String profileScreen = '/profile';
+  static const String profileSettingsScreen = '/profileSettings';
 }

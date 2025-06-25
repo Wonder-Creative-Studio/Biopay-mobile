@@ -5,6 +5,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String userGreeting;
   final Widget? userAvatar;
   final VoidCallback? onNotificationTap;
+  final VoidCallback? onProfileTap;
 
   const CommonAppBar({
     super.key,
@@ -12,6 +13,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.userGreeting = "Hey,",
     this.userAvatar,
     this.onNotificationTap,
+    this.onProfileTap,
   });
 
   @override
@@ -23,21 +25,27 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       leadingWidth: 80,
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 16.0),
-        child:
-            userAvatar ??
-            const CircleAvatar(radius: 30, child: Icon(Icons.person)),
+      leading: InkWell(
+        onTap: onProfileTap,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child:
+              userAvatar ??
+              const CircleAvatar(radius: 30, child: Icon(Icons.person)),
+        ),
       ),
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(userGreeting, style: TextStyle(fontSize: 14)),
-          Text(
-            userName,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ],
+      title: InkWell(
+        onTap: onProfileTap,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(userGreeting, style: TextStyle(fontSize: 14)),
+            Text(
+              userName,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
       actions: [
         IconButton(

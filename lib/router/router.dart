@@ -32,6 +32,8 @@ import '../features/crypto/screens/metamask_add_crypto_screen.dart';
 import '../features/insights/screens/insights_screen.dart';
 import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
+import '../features/profile/screens/profile_screen.dart';
+import '../features/profile/screens/profile_settings_screen.dart';
 import '../features/upi/screens/upi_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
@@ -189,6 +191,14 @@ final router = GoRouter(
     GoRoute(
       path: Routes.metamaskAddCryptoScreen,
       builder: (context, state) => const MetamaskAddCryptoScreen(),
+    ),
+    GoRoute(
+      path: Routes.profileScreen,
+      builder: (context, state) => const ProfileScreen(),
+    ),
+    GoRoute(
+      path: Routes.profileSettingsScreen,
+      builder: (context, state) => const ProfileSettingsScreen(),
     ),
   ],
 );
