@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import '../../../router/routes.dart';
 import '../../../widgets/basic_app_bar.dart';
 
 class ProfileSettingsScreen extends StatelessWidget {

@@ -1,5 +1,7 @@
 import 'package:biopay_mobile/constants/colors.dart';
+import 'package:biopay_mobile/router/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../widgets/basic_app_bar.dart';
 
@@ -58,7 +60,9 @@ class UpiScreen extends StatelessWidget {
                     context,
                     Icons.sync_alt,
                     'Self transfer',
-                    () {},
+                    () {
+                      context.push(Routes.selfTransferScreen);
+                    },
                   ),
                   _buildActionButton(
                     context,

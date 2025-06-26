@@ -34,7 +34,10 @@ import '../features/insights/screens/set_budget_screen.dart';
 import '../features/onboarding/screens/onboarding_screen.dart';
 import '../features/profile/screens/profile_screen.dart';
 import '../features/profile/screens/profile_settings_screen.dart';
+import '../features/upi/screens/self_transfer_enter_amount_screen.dart';
+import '../features/upi/screens/self_transfer_screen.dart';
 import '../features/upi/screens/upi_screen.dart';
+import '../features/upi/screens/verify_upi_pin_screen.dart';
 import '../features/onboarding/screens/splash_screen.dart';
 import '../features/landing/screens/landing_screen.dart';
 import '../features/bank_accounts/screens/bank_accounts_screen.dart';
@@ -230,5 +233,28 @@ final router = GoRouter(
       path: Routes.accountLinkedSuccessScreen,
       builder: (context, state) => const AccountLinkedSuccessScreen(),
     ),
+    GoRoute(
+      path: Routes.selfTransferScreen,
+      builder: (context, state) => const SelfTransferScreen(),
+    ),
+    GoRoute(
+        path: Routes.selfTransferEnterAmountScreen,
+        builder: (context, state) {
+          final extra = state.extra as Map<String, dynamic>;
+          return SelfTransferEnterAmountScreen(
+            fromAccount: extra['fromAccount'] as Map<String, String>,
+            toAccount: extra['toAccount'] as Map<String, String>,
+          );
+        }),
+    GoRoute(
+        path: Routes.verifyUpiPinScreen,
+        builder: (context, state) {
+          final extra = state.extra as Map<String, dynamic>;
+          return VerifyUpiPinScreen(
+            fromAccount: extra['fromAccount'] as Map<String, String>,
+            toAccount: extra['toAccount'] as Map<String, String>,
+            amount: extra['amount'] as String,
+          );
+        }),
   ],
 );

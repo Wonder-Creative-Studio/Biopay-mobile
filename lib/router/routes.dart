@@ -44,4 +44,7 @@ class Routes {
   static const String verifyAccountScreen = '/verifyAccount';
   static const String setUpiPinScreen = '/setUpiPin';
   static const String accountLinkedSuccessScreen = '/accountLinkedSuccess';
+  static const String selfTransferScreen = '/self-transfer';
+  static const String selfTransferEnterAmountScreen = '/self-transfer-enter-amount';
+  static const String verifyUpiPinScreen = '/verify-upi-pin';
 }
