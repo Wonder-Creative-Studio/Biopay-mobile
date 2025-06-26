@@ -73,7 +73,9 @@ class UpiScreen extends StatelessWidget {
                     context,
                     Icons.receipt_long,
                     'Pay Bills',
-                    () {},
+                    () {
+                      context.push(Routes.payBillScreen); // pushes onto stack
+                    },
                   ),
                   _buildActionButton(
                     context,

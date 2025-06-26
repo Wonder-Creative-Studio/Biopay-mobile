@@ -48,4 +48,10 @@ class Routes {
   static const String mobileSelectPlanScreen = '/mobileSelectPlan';
   static const String mobilePlanDetailScreen = '/mobilePlanDetail';
 
+  static const String payBillScreen = '/payBill';
+  static const String selectDTHScreen = '/selectDTH';
+  static const String selectProviderScreen = '/selectProvider';
+  static const String googlePlayStoreScreen = '/googlePlayStore';
+
+
 }

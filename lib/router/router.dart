@@ -18,6 +18,12 @@ import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_operator_sc
 import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_plandetail_screen.dart';
 import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_recharge_screen.dart';
 import 'package:biopay_mobile/features/mobile_recharge/screen/mobile_selectplan_screen.dart';
+import 'package:biopay_mobile/features/pay_bill/model/provider_argument.dart';
+import 'package:biopay_mobile/features/pay_bill/model/select_provider_argument.dart';
+import 'package:biopay_mobile/features/pay_bill/screen/google_play_screen.dart';
+import 'package:biopay_mobile/features/pay_bill/screen/pay_bill_screen.dart';
+import 'package:biopay_mobile/features/pay_bill/screen/select_dth_screen.dart';
+import 'package:biopay_mobile/features/pay_bill/screen/select_provider_screen.dart';
 import 'package:biopay_mobile/features/upi/model/payment_argument.dart';
 import 'package:biopay_mobile/features/upi/screens/bank_balnace_screen.dart';
 import 'package:biopay_mobile/features/upi/screens/enter_upi_pin_screen.dart';
@@ -136,8 +142,7 @@ final router = GoRouter(
         final arguments = state.extra as PaymentArguments;
         return PaymentScreen(
           args: arguments,
-        );
-        },
+        );},
     ),
     GoRoute(
       path: Routes.enterUpiPinScreen,
@@ -246,6 +251,30 @@ final router = GoRouter(
     GoRoute(
       path: Routes.mobilePlanDetailScreen,
       builder: (context, state) => MobilePlandetailScreen(),
+    ),
+    GoRoute(
+      path: Routes.payBillScreen,
+      builder: (context, state) => PayBillScreen(),
+    ),
+    GoRoute(
+      path: Routes.selectDTHScreen,
+      builder: (context, state) {
+        final arguments = state.extra as ProviderArgument;
+        return SelectDthScreen(
+          args: arguments,
+        );},
+    ),
+    GoRoute(
+      path: Routes.selectProviderScreen,
+      builder: (context, state) {
+        final arguments = state.extra as SelectProviderArgument;
+        return SelectProviderScreen(
+          args: arguments,
+        );},
+    ),
+    GoRoute(
+      path: Routes.googlePlayStoreScreen,
+      builder: (context, state) => GooglePlayScreen(),
     ),
   ],
 );
