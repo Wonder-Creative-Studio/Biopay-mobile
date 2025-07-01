@@ -2,7 +2,9 @@ import 'dart:developer' as d;
 import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../constants/assets.dart';
+import '../../../router/routes.dart';
 import '../../../widgets/common_app_bar.dart';
 import '../widgets/upi_card.dart';
 import '../widgets/wallet_balance_card.dart';
@@ -132,6 +134,12 @@ class _WalletScreenState extends State<WalletScreen> {
             "https://cdn.noitatnemucod.net/thumbnail/300x400/100/9cbcf87f54194742e7686119089478f8.jpg",
           ),
         ),
+        onProfileTap: () {
+          context.push(Routes.profileScreen);
+        },
+        onNotificationTap: () {
+          d.log("message");
+        },
       ),
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),

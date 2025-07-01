@@ -16,6 +16,7 @@ class CustomFilledButton extends StatelessWidget {
   final TextStyle? titleStyle;
   final Gradient? gradient;
   final Icon? icon;
+  final bool isPrefixIcon;
 
   const CustomFilledButton({
     super.key,
@@ -34,6 +35,7 @@ class CustomFilledButton extends StatelessWidget {
     this.titleStyle,
     this.gradient,
     this.icon,
+    this.isPrefixIcon = false,
   });
 
   @override
@@ -68,6 +70,8 @@ class CustomFilledButton extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    if (isPrefixIcon && icon != null) icon!,
+                    if (isPrefixIcon && icon != null) const SizedBox(width: 8),
                     Text.rich(
                       TextSpan(
                         text: subtitle ?? "",
@@ -85,8 +89,8 @@ class CustomFilledButton extends StatelessWidget {
                         ],
                       ),
                     ),
-                    if (icon != null) const SizedBox(width: 8),
-                    if (icon != null) icon!,
+                    if (!isPrefixIcon && icon != null) const SizedBox(width: 8),
+                    if (!isPrefixIcon && icon != null) icon!,
                   ],
                 ),
               ),

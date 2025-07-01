@@ -1,114 +1,204 @@
+import 'package:biopay_mobile/constants/colors.dart';
+import 'package:biopay_mobile/widgets/basic_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class CryptoBalanceScreen extends StatefulWidget {
+class CryptoBalanceScreen extends StatelessWidget {
   const CryptoBalanceScreen({super.key});
-
-  @override
-  State<CryptoBalanceScreen> createState() => _CryptoBalanceScreenState();
-}
-
-class _CryptoBalanceScreenState extends State<CryptoBalanceScreen> {
-  final List<Map<String, String>> tokenData = [
-    {"symbol": "ETH", "icon": "🪙", "balance": "0.543", "inr": "₹1,45,200"},
-    {"symbol": "USDT", "icon": "🪙", "balance": "100.00", "inr": "₹8,300"},
-    {"symbol": "BTC", "icon": "🪙", "balance": "0.005", "inr": "₹15,000"},
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text('Crypto Balances', style: TextStyle(color: Colors.white)),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+      appBar: BasicAppBar(title: 'Crypto Balances'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Wallet Box
+            // Wallet Info Section (similar to CryptoScreen)
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: const Color(0xFF1A1A1A),
-                borderRadius: BorderRadius.circular(12),
+                color: buttonBGGrey,
+                borderRadius: BorderRadius.circular(12.0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     'MetaMask Connected',
-                    style: TextStyle(color: Colors.white70),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
                   const Text(
-                    'Wallet\n0xAB...123F',
+                    'Wallet',
+                    style: TextStyle(fontSize: 14, color: Colors.white54),
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'OxAB...123F', // Placeholder address
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Row(
-                      children: const [
-                        Icon(Icons.refresh, color: Colors.white70),
-                        SizedBox(width: 8),
-                        Text(
-                          'Refresh Wallet',
-                          style: TextStyle(color: Colors.white70),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.refresh,
+                        size: 18,
+                        color: Colors.white54,
+                      ),
+                      const SizedBox(width: 4),
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         ),
-                      ],
-                    ),
+                        child: const Text(
+                          'Refresh Wallet',
+                          style: TextStyle(fontSize: 14, color: Colors.white54),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-
             const SizedBox(height: 24),
-
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Your Tokens",
-                style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            const Text(
+              'Your Tokens',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            // Tokens List/Table
+            Expanded(
+              child: ListView(
+                children: const [
+                  // Header Row
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Text(
+                            'Token',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Balance',
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Text(
+                            'In ₹',
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(color: Colors.white12),
+                  // Token Rows (Placeholder Data)
+                  _TokenRow(
+                    tokenIcon: Icons.currency_bitcoin,
+                    tokenName: 'ETH',
+                    balance: '0.543',
+                    inrValue: '₹1,45,200',
+                  ),
+                  Divider(color: Colors.white12),
+                  _TokenRow(
+                    tokenIcon: Icons.currency_bitcoin,
+                    tokenName: 'USDT',
+                    balance: '100.00',
+                    inrValue: '₹8,300',
+                  ),
+                  Divider(color: Colors.white12),
+                  _TokenRow(
+                    tokenIcon: Icons.currency_bitcoin,
+                    tokenName: 'BTC',
+                    balance: '0.005',
+                    inrValue: '₹15,000',
+                  ),
+                  Divider(color: Colors.white12),
+                ],
               ),
             ),
-            const SizedBox(height: 12),
-
-            // Token Header Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Token", style: TextStyle(color: Colors.white70)),
-                Text("Balance", style: TextStyle(color: Colors.white70)),
-                Text("In ₹", style: TextStyle(color: Colors.white70)),
-              ],
-            ),
-            const SizedBox(height: 12),
-
-            // Token List
-            ...tokenData.map((token) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(token["symbol"]!, style: const TextStyle(color: Colors.white)),
-                    Text(token["balance"]!, style: const TextStyle(color: Colors.white)),
-                    Text(token["inr"]!, style: const TextStyle(color: Colors.white)),
-                  ],
-                ),
-              );
-            }).toList()
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _TokenRow extends StatelessWidget {
+  final IconData tokenIcon;
+  final String tokenName;
+  final String balance;
+  final String inrValue;
+
+  const _TokenRow({
+    required this.tokenIcon,
+    required this.tokenName,
+    required this.balance,
+    required this.inrValue,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Icon(tokenIcon, size: 20, color: Colors.white),
+                const SizedBox(width: 8),
+                Text(tokenName, style: const TextStyle(fontSize: 16)),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Text(
+              balance,
+              textAlign: TextAlign.end,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Text(
+              inrValue,
+              textAlign: TextAlign.end,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ),
+        ],
       ),
     );
   }

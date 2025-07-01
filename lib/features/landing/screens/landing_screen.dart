@@ -6,7 +6,9 @@ import '../../crypto/screens/crypto_screen.dart';
 import '../../insights/screens/insights_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({super.key});
+  final int selectedIndex;
+
+  const LandingScreen({super.key, this.selectedIndex = 0});
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
@@ -23,6 +25,12 @@ class _LandingScreenState extends State<LandingScreen> {
     const InsightsScreen(),
   ];
 
+  @override
+  void initState() {
+    _selectedIndex = widget.selectedIndex;
+    super.initState();
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -33,7 +41,6 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: _screens[_selectedIndex],
         bottomNavigationBar: SizedBox(
           height: 60,
