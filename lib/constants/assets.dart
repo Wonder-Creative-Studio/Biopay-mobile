@@ -22,7 +22,6 @@ class Assets {
   static final String hdfcCard = '${basePath}hdfc_card.png';
   static final String rocketSuccess = '${basePath}rocket_success.png';
   static final String qrCode = '${basePath}qrcode.png';
-  static final String metamask = '${basePath}metamask.png';
   static final String cryptoLanding = '${basePath}crypto_langing.png';
   static final String cryptoSuccess = '${basePath}crypto_success.png';
   static final String receive = '${basePath}receive.png';

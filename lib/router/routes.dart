@@ -66,7 +66,6 @@ class Routes {
   static const String cryptoSetUpiSrceen = '/cryptoSetUpi';
   static const String cryptoConnectScreen = '/cryptoConnect';
   static const String cryptoHomeScreen = '/cryptoHome';
-  static const String cryptoBalanceScreen = '/cryptoBalance';
   static const String sendCryptoScreen = '/sendCrypto';
   static const String previewTransectionScreen = '/previewTransection';
   static const String enterPinScreen = '/enterPin';
